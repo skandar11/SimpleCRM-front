@@ -3,24 +3,12 @@
     "baseUrl": "src",
     "paths": {
       "@/*": ["/*"],
-      "@api/*": ["api/*"],
+      "@app/*": ["app/*"],
       "@pages/*": ["pages/*"],
-      "@components/*": ["components/*"],
-      "@hooks/*": ["common/hooks/*"],
-      "@hoc/*": ["common/hoc/*"],
-      "@utils/*": ["common/utils/*"],
-      "@enums/*": ["common/enums/*"],
-      "@configs/*": ["common/configs/*"],
-      "@providers/*": ["providers/*"],
-      "@blockchain/*": ["blockchain/*"],
-      "@layouts/*": ["layouts/*"],
-      "@styles/*": ["styles/*"],
-
-      "@store/*": ["store/*"],
-
-      "@services/*": ["api/services/*"],
-      "@assets/*": ["assets/*"],
-      "@constants/*": ["common/constants/*"]
+      "@entities/*": ["entities/*"],
+      "@shared/*": ["shared/*"],
+      "@features/*": ["features/*"],
+      "@widgets/*": ["widgets/*"]
     }
   }
 }
