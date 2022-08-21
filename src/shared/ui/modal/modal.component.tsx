@@ -1,7 +1,8 @@
-import styles from '@components/shared/modal/modal.module.scss'
 import type { ReactNode } from 'react'
 import React from 'react'
 import { createPortal } from 'react-dom'
+
+import styles from './modal.module.scss'
 
 export interface IModalProperties {
   className?: string

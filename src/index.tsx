@@ -1,8 +1,7 @@
-import '@styles/global.scss'
-import 'normalize.css'
+import '@app/styles/global.scss'
 
 import App from '@app/app'
-import { store } from '@app/store/store'
+import { store } from '@shared/store/store'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { Provider } from 'react-redux'

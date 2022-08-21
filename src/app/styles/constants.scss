@@ -1,11 +1,11 @@
 :root {
-  --frame-bg-color: #c9c9c9;
-  --page-bg-color: #ffffff;
+  --frame-bg-color: #FFFFFF;
+  --page-bg-color: #EDEDED;
 
   --primary-color: ;
   --primary-hover-color: ;
 
-  --primary-text-color: ;
+  --primary-text-color: #1A1A1A;
   --primary-hover-text-color: ;
 
   --primary-border-color: ;
@@ -14,11 +14,14 @@
   --secondary-color: ;
   --secondary-hover-color: ;
 
-  --secondary-text-color: ;
-  --secondary-hover-text-color: ;
+  --secondary-text-color: #1E1E1E;
+  --secondary-hover-text-color: #000000;
 
   --secondary-border-color: ;
   --secondary-hover-border-color: ;
+
+  --header-height: 56px;
+  --footer-height: 90px;
 }
 
 [data-theme='dark'] {

@@ -1,8 +1,8 @@
-import AppRouter from 'features/app.router'
+import { AppRouter } from '@shared/ui'
 
 function App(): JSX.Element {
   return (
-    <div className="app__container">
+    <div className="app">
       <AppRouter />
     </div>
   )

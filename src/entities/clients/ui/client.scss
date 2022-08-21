@@ -1,0 +1,11 @@
+.client-card {
+  padding: 16px 12px;
+  background-color: var(--frame-bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clients-list {
+  @apply space-y-3;
+}

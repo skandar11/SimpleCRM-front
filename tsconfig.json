@@ -15,7 +15,7 @@
     "noUncheckedIndexedAccess": true,
     "noImplicitAny": true,
     "noImplicitReturns": true,
-    "noUnusedLocals": true,
+
     "allowUnreachableCode": false,
     "noFallthroughCasesInSwitch": true,
     "target": "es5",
@@ -40,6 +40,6 @@
     "declarations.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "src/shared/ui/icons/icon.component.jsx"  ],
   "extends": "./tsconfig.paths.json"
 }
