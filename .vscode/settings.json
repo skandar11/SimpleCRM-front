@@ -49,5 +49,7 @@
     "styles.ts": "variants.ts, keyframes.ts",
     "index.tsx": "data.ts, utils.ts, data.tsx",
     "index.ts": "data.ts, utils.ts, data.tsx, interfaces.ts"
-  }
+  },
+  "exportall.config.folderListener": ["/src/features/auth/dto"],
+  "exportall.config.relExclusion": ["/src/entities/client/model/dto/index.ts"]
 }
