@@ -1,6 +1,7 @@
 import { Clients, ClientsApi } from '@entities/clients'
 import { TargetsApi } from '@entities/targets'
 import { TargetStatusEnum } from '@entities/targets/model'
+import { AuthModel } from '@features/auth'
 import { EditClient } from '@features/edit-client'
 import { ArrowBackIcon, Footer, Header } from '@shared/ui'
 import { FooterNav } from '@shared/ui/footer/footer-nav.component'
@@ -12,7 +13,7 @@ import { ClientInfoField } from './ui'
 
 export interface IClientPageProperties {}
 
-export function ClientPage(props: IClientPageProperties) {
+export const ClientPage = AuthModel.withAuthGuard((props: IClientPageProperties) => {
   const navigate = useNavigate()
   const location = useLocation()
 
@@ -74,4 +75,4 @@ export function ClientPage(props: IClientPageProperties) {
       </>
     )
   )
-}
+})

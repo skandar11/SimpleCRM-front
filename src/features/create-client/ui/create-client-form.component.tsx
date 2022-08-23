@@ -13,12 +13,12 @@ export function CreateClientForm(props: ICreateClientFormProperties) {
   } = useFormContext()
 
   return (
-    <Form defaultValues={''}>
-      <div>
+    <Form defaultValues={''} className="w-full h-full flex items-center justify-center">
+      <div className="w-full flex flex-col gap-4 ">
         <Input
           setValue={() => {}}
-          placeholder="Имя"
-          containerClasses="w-full"
+          placeholder="Имя "
+          inputClasses="w-full"
           name="name"
           register={register}
           errors={errors}
@@ -35,7 +35,7 @@ export function CreateClientForm(props: ICreateClientFormProperties) {
                 placeholder="+7"
                 value={value}
                 onChange={onChange}
-                className="input"
+                className="input w-full"
               />
             )
           }}
@@ -43,7 +43,7 @@ export function CreateClientForm(props: ICreateClientFormProperties) {
         <Input
           setValue={() => {}}
           placeholder="Email"
-          containerClasses="w-full"
+          inputClasses="w-full"
           name="email"
           register={register}
           errors={errors}
@@ -51,7 +51,7 @@ export function CreateClientForm(props: ICreateClientFormProperties) {
         <Input
           setValue={() => {}}
           placeholder="Дата рождения"
-          containerClasses="w-full"
+          inputClasses="w-full"
           name="birthDay"
           register={register}
           errors={errors}
@@ -60,7 +60,7 @@ export function CreateClientForm(props: ICreateClientFormProperties) {
         <ExtraInput
           setValue={() => {}}
           placeholder="Противопоказания"
-          containerClasses="w-full"
+          inputClasses="w-full"
           name="contraindications"
           register={register}
           errors={errors}

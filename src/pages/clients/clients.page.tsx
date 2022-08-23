@@ -6,10 +6,11 @@ import { FooterNav } from '@shared/ui/footer/footer-nav.component'
 import { Main } from '@shared/ui/main/main.component'
 import { Label } from '@shared/ui/status-badge.component'
 import { useNavigate } from 'react-router-dom'
+import { AuthModel } from '@features/auth'
 
 export interface IClientsPageProperties {}
 
-export function ClientsPage(props: IClientsPageProperties) {
+export const ClientsPage = AuthModel.withAuthGuard((props: IClientsPageProperties) => {
   const { data: clients } = ClientsApi.useGetAllClientsInfoQuery()
   const navigate = useNavigate()
   return (
@@ -33,4 +34,4 @@ export function ClientsPage(props: IClientsPageProperties) {
       </Footer>
     </>
   )
-}
+})

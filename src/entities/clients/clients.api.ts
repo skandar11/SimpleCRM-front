@@ -1,5 +1,5 @@
 import { createApi } from '@reduxjs/toolkit/query/react'
-import { baseQuery } from '@shared/api'
+import { baseQueryWithReauth } from '@shared/api'
 import type { IBaseResponse } from '@shared/types'
 
 import type {
@@ -14,7 +14,7 @@ import type { ICreateClientDto } from './model/dto/create-client.dto'
 // Define a service using a base URL and expected endpoints
 export const clientsApi = createApi({
   reducerPath: 'clientsApi',
-  baseQuery,
+  baseQuery: baseQueryWithReauth,
   tagTypes: ['CLIENTS'],
   endpoints: (builder) => ({
     postClientInfo: builder.mutation<any, IPostClientInfoDto>({

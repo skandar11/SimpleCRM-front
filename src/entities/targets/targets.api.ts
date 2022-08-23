@@ -1,5 +1,5 @@
 import { createApi } from '@reduxjs/toolkit/query/react'
-import { baseQuery } from '@shared/api'
+import { baseQueryWithReauth } from '@shared/api'
 import type { IBaseResponse } from '@shared/types'
 
 import type { IAddTargetDto } from './model/dto/add-target.dto'
@@ -9,7 +9,7 @@ import type { IGetAllTargetsDto } from './model/dto/get-all-targets.dto'
 // Define a service using a base URL and expected endpoints
 export const targetsApi = createApi({
   reducerPath: 'targetsApi',
-  baseQuery,
+  baseQuery: baseQueryWithReauth,
   tagTypes: ['TARGETS'],
   endpoints: (builder) => ({
     addTarget: builder.mutation<any, IAddTargetDto>({
