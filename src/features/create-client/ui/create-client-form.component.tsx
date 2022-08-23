@@ -13,11 +13,11 @@ export function CreateClientForm(props: ICreateClientFormProperties) {
   } = useFormContext()
 
   return (
-    <Form defaultValues={''} className='w-full h-full flex items-center justify-center'>
-      <div className='w-full flex flex-col gap-4 '>
+    <Form defaultValues={''} className="w-full h-full flex items-center justify-center">
+      <div className="w-full flex flex-col gap-4 ">
         <Input
           setValue={() => {}}
-          placeholder="Имя"
+          placeholder="Имя "
           inputClasses="w-full"
           name="name"
           register={register}
