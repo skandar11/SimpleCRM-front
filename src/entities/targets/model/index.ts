@@ -1,3 +1,4 @@
 export * from './dto'
-export * from './target.slice'
+export * from './progress.model'
 export * from './target-status.enum'
+export * from './target.slice'

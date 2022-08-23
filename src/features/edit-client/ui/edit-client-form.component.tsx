@@ -19,7 +19,7 @@ export function EditClientForm({ clientInfo, target }: IEditClientFormProperties
   } = useFormContext()
 
   return (
-    <Form defaultValues={clientInfo}>
+    <Form defaultValues={clientInfo} className="w-full">
       <div className="space-y-4">
         <Input
           setValue={() => {}}

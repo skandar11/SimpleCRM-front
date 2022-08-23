@@ -43,7 +43,11 @@ export function TargetCheckbox({ target }: ITargetCheckboxProperties) {
       </div>
 
       <p>{target?.desire}</p>
-      <button onClick={() => editTargetToggle}>
+      <button
+        onClick={() => {
+          editTargetToggle()
+        }}
+      >
         <MoreIcon />
       </button>
       {target && (

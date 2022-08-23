@@ -56,12 +56,13 @@ export const CreateClientWidget = (props: ICreateClientWidgetProperties) => {
         </div>
       </Main>
       <Footer>
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center w-full px-8">
           <AttachIcon />
           <Input
-            containerClasses="inline-flex items-center justify-center"
+            containerClasses="flex items-center justify-center w-full"
             setValue={() => {}}
             placeholder="Добавить комментарий"
+            inputClasses='w-full'
           />
         </div>
       </Footer>
