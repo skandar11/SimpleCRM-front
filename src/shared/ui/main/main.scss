@@ -1,7 +1,3 @@
 .main {
-  padding-top: var(--header-height);
-  height: calc(100vh - var(--footer-height));
-  overflow: scroll;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  @apply overflow-scroll h-full bg-page-bg;
 }

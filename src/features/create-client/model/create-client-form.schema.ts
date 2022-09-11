@@ -9,4 +9,7 @@ export const createClientSchema = yup.object().shape({
     .string()
     .email('Email введен не корректно')
     .required('Поле "Email" обязательное!'),
+  target: yup.string().notRequired().nullable(),
 })
+
+export type CreateClientSchema = yup.InferType<typeof createClientSchema>

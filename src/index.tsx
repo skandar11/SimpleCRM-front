@@ -1,7 +1,7 @@
 import '@app/styles/global.scss'
 
 import App from '@app/app'
-import { store } from '@shared/store/store'
+import { store } from '@shared/model/store'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { Provider } from 'react-redux'

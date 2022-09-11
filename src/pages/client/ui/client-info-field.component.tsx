@@ -1,15 +1,20 @@
 import * as React from 'react'
 
 export interface IClientInfoFieldProperties {
-  title: string | undefined
-  content: string | undefined
+  icon: any
+  children: any
+  className?: string
 }
 
-export function ClientInfoField({ content, title }: IClientInfoFieldProperties) {
+export function ClientInfoField({
+  children,
+  icon,
+  className,
+}: IClientInfoFieldProperties) {
   return (
-    <p className="w-full grid grid-cols-2 gap-3">
-      <span className="font-semibold">{title}: </span>
-      <span>{content}</span>
-    </p>
+    <div className="frame w-full px-2 flex rounded-frame py-3">
+      <div className="mr-2 w-6">{icon}</div>
+      <span className={className}>{children}</span>
+    </div>
   )
 }

@@ -6,11 +6,11 @@ import type {
 } from '@reduxjs/toolkit/dist/query'
 import { fetchBaseQuery } from '@reduxjs/toolkit/dist/query'
 import type { BaseQueryApi } from '@reduxjs/toolkit/dist/query/baseQueryTypes'
-import type { RootState } from '@shared/store'
+import type { RootState } from '@shared/model'
 import { Mutex } from 'async-mutex'
 
 export const baseQuery = fetchBaseQuery({
-  baseUrl: `http://localhost:3000/api/`,
+  baseUrl: `http://80.78.244.97:3000/api`,
   mode: 'cors',
   prepareHeaders: (headers, { getState }) => {
     const aToken = (getState() as RootState).auth?.accessToken
@@ -36,6 +36,7 @@ export const baseQueryWithReauth: BaseQueryFn<
 ) => {
   await mutex.waitForUnlock()
   let result = await baseQuery(arguments_, api, extraOptions)
+  console.log(result)
 
   if (result.error && result.error.status === 401) {
     if (!mutex.isLocked()) {

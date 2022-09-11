@@ -1,3 +1,4 @@
+import { AbonementsPage } from '@pages/abonements/abonements.page'
 import { AuthPage } from '@pages/auth'
 import { ClientPage } from '@pages/client/client.page'
 import { ClientsPage } from '@pages/clients'
@@ -46,6 +47,11 @@ export const ROUTES = [
   {
     path: '/clients/progress/:clientId',
     component: ProgressPage,
+    exact: false,
+  },
+  {
+    path: '/abonements',
+    component: AbonementsPage,
     exact: false,
   },
 ]

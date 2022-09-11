@@ -1,3 +1,3 @@
-export * as TargetsModel from './model'
-export * as TargetsApi from './targets.api'
-export * as Targets from './ui'
+export * as TargetsModelService from './model'
+export * as TargetsApiService from './targets.api'
+export * as TargetsUiService from './ui'

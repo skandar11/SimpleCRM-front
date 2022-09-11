@@ -1,5 +1,5 @@
-export interface IComment {
-  images: Array<Blob | MediaSource>
-  body: string
-  timestamp: Date
+import type { IEventEntity } from './event.entity'
+
+export interface IComment extends IEventEntity {
+  images?: any
 }
