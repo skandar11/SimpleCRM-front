@@ -1,2 +1,2 @@
-export * as CreateClientModel from './model'
-export * as CreateClient from './ui'
+export * as CreateClientModelService from './model'
+export * as CreateClientUiService from './ui'

@@ -1,6 +1,7 @@
-import { Clients } from '@entities/clients'
+import { ClientsUiService } from '@entities/clients'
 import type { IGetClientInfoDto } from '@entities/clients/model'
 import type { IComment } from '@entities/clients/model/comment.model'
+import { EventsList } from '@entities/clients/ui'
 import type { ITarget } from '@entities/targets/model'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { Footer, Header, Input } from '@shared/ui'
@@ -12,7 +13,6 @@ import { Link } from 'react-router-dom'
 
 import { editClientSchema } from '../model'
 import { useEditClient } from '../model/use-edit-client.hook'
-import { CommentsList } from '../../../entities/clients/ui/comments-list.component'
 import { EditClientForm } from './edit-client-form.component'
 
 export interface IEditClientWidgetProperties {
@@ -44,8 +44,9 @@ export const EditClientWidget = ({ clientInfo, target }: IEditClientWidgetProper
 
   const [newComment, setNewComment] = useState<IComment>({
     images: [],
-    body: 'Результат взвешивания составил 80 кг',
-    timestamp: new Date(),
+    text: 'Результат взвешивания составил 80 кг',
+    date: '12.02.2022',
+    author: 'Тренер',
   })
 
   return (
@@ -57,14 +58,14 @@ export const EditClientWidget = ({ clientInfo, target }: IEditClientWidgetProper
 
         <div className="flex space-x-2 items-center justify-center">
           <p>{clientInfo?.name}</p>
-          <Clients.ClientStatusLabel status={clientInfo?.status || 1} />
+          <ClientsUiService.ClientStatusLabel status={clientInfo?.status || 1} />
         </div>
         <button onClick={methods.handleSubmit(onEditClient)}>Сохранить</button>
       </Header>
       <Main className="clients-container">
         <div className="h-full flex flex-col items-center pt-4">
           <EditClientForm clientInfo={clientInfo} target={target} />
-          <CommentsList newComment={newComment} comments={[]} />
+          <EventsList newComment={newComment} events={[]} />
         </div>
       </Main>
       <Footer>
@@ -78,10 +79,10 @@ export const EditClientWidget = ({ clientInfo, target }: IEditClientWidgetProper
             }
           />
           <Input
-            containerClasses="flex items-center justify-center w-full"
+            containerClassName="flex items-center justify-center w-full"
             setValue={() => {}}
             placeholder="Добавить комментарий"
-            inputClasses="w-full"
+            inputClassName="w-full"
           />
         </div>
       </Footer>

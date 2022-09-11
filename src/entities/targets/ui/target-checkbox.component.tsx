@@ -1,4 +1,4 @@
-import { useModal } from '@shared/hooks'
+import { useModal } from '@shared/ui'
 import { EmptyCheckboxIcon } from '@shared/ui/icons/empty-checkbox.icon'
 import { FillCheckboxIcon } from '@shared/ui/icons/fill-checkbox.icon'
 import { MoreIcon } from '@shared/ui/icons/more.icon'

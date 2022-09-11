@@ -1,5 +1,5 @@
 import { createApi } from '@reduxjs/toolkit/dist/query/react'
-import { baseQuery } from '@shared/api'
+import { baseQueryWithReauth } from '@shared/api'
 import type { IBaseResponse } from '@shared/types'
 
 import type { ILoginDto, ISignupDto } from './model'
@@ -8,7 +8,7 @@ import { setTokens } from './model/auth.slice'
 // Define a service using a base URL and expected endpoints
 export const authApi = createApi({
   reducerPath: 'authApi',
-  baseQuery,
+  baseQuery: baseQueryWithReauth,
   tagTypes: ['VIEWER'],
   endpoints: (builder) => ({
     signup: builder.mutation({

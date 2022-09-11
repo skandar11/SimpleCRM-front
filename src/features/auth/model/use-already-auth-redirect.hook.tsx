@@ -1,4 +1,4 @@
-import { useAppSelector } from '@shared/store'
+import { useAppSelector } from '@shared/model'
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 

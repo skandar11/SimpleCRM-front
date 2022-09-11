@@ -1,9 +1,5 @@
 .client-card {
-  padding: 16px 12px;
-  background-color: var(--frame-bg-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @apply py-3 px-2 flex justify-between;
 }
 
 .clients-list {

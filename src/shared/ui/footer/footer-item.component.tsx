@@ -14,14 +14,9 @@ function FooterItem(props: IFooterItemProperties) {
 }
 
 function FooterItemIcon(props: any) {
-  return <div className="flex flex-col">{props.children}</div>
-}
-
-function FooterItemTitle(props: any) {
-  return <div className="flex flex-col">{props.children}</div>
+  return <div className="flex flex-col w-6">{props.children}</div>
 }
 
 FooterItem.Icon = FooterItemIcon
-FooterItem.Title = FooterItemTitle
 
-export { FooterItem, FooterItemIcon, FooterItemTitle }
+export { FooterItem, FooterItemIcon }

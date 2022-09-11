@@ -13,7 +13,10 @@ export function ClientCard({ client }: IClientCardProperties) {
   const navigate = useNavigate()
 
   return (
-    <div className="client-card" onClick={() => navigate(`/clients/${client.id}`)}>
+    <div
+      className="frame rounded-frame client-card"
+      onClick={() => navigate(`/clients/${client.id}`)}
+    >
       <p>{client.name}</p>
       <ClientStatusLabel status={client.status} />
     </div>

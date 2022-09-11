@@ -1,38 +1,48 @@
-import { Auth, AuthModel } from '@features/auth'
-import { Footer, Header } from '@shared/ui'
+import { AuthModelService, AuthUiService } from '@features/auth'
+import image from '@shared/assets/main-logo.png'
+import { Header } from '@shared/ui'
+import { Button, ButtonTheme } from '@shared/ui/button'
+import { OrRegistration } from '@shared/ui/icons/or-registratoin'
 import { Main } from '@shared/ui/main/main.component'
-import { Link } from 'react-router-dom'
 
 export interface IClientsPageProperties {}
 
 export function AuthPage(props: IClientsPageProperties) {
-  const isLogin = AuthModel.useIsLogin()
-  AuthModel.useAlreadyAuthRedirect()
+  const isLogin = AuthModelService.useIsLogin()
+  AuthModelService.useAlreadyAuthRedirect()
 
   return (
     <>
       <Header>
-        <h1>Авторизация</h1>
+        <h1></h1>
       </Header>
       <Main>
-        <div className="h-full flex flex-col items-center justify-evenly">
-          <Auth.AuthForm />
+        <div className="container h-full flex flex-col items-center justify-between py-6">
+          <div className="flex flex-col items-center justify-center font-bold text-3xl">
+            <img src={image} alt="" />
+            <p>SimpleFit</p>
+          </div>
+
+          <AuthUiService.AuthForm />
           {isLogin ? (
-            <div>
-              <h2>Еще не зарегистрированы?</h2>
-              <Link to="/auth/registration">Зарегистрироваться</Link>
+            <div className="flex flex-col w-full">
+              <div className="w-3/4 mx-auto">
+                <OrRegistration />
+              </div>
+              <Button theme={ButtonTheme.light} href="/auth/registration">
+                Зарегистрироваться
+              </Button>
             </div>
           ) : (
             <div>
               <h2>Уже зарегистрированы?</h2>
-              <Link to="/auth/login">Войти</Link>
+              <Button theme={ButtonTheme.light} href="/auth/login">
+                Войти
+              </Button>
             </div>
           )}
         </div>
       </Main>
-      <Footer>
-        <div></div>
-      </Footer>
     </>
   )
 }

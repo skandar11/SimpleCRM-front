@@ -1,3 +1,3 @@
-export * as ClientsApi from './clients.api'
-export * as ClientsModel from './model'
-export * as Clients from './ui'
+export * as ClientsApiService from './clients.api'
+export * as ClientsModelService from './model'
+export * as ClientsUiService from './ui'

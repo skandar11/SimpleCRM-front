@@ -1,0 +1,25 @@
+@tailwind components;
+
+@layer components {
+  .input {
+    @apply py-2 px-2 w-full border-[2px] outline-none placeholder:opacity-40 bg-textfield-bg rounded-base text-sm;
+
+    &--with-icon {
+      @apply pl-10;
+    }
+    &__container {
+      @apply flex flex-col items-start relative m-0 mb-2;
+    }
+
+    &__title {
+      @apply mb-[0.6rem] text-sm uppercase font-semibold;
+    }
+  }
+
+  .extraInput {
+    &__container {
+      @apply flex flex-col items-start relative m-0 pb-2;
+    }
+    @apply py-3 w-full;
+  }
+}

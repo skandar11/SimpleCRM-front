@@ -1,21 +1,23 @@
 import './input.scss'
 
-import { ErrorMessage } from '@hookform/error-message'
 import classNames from 'classnames'
-import type { DetailedHTMLProps } from 'react'
+import type { DetailedHTMLProps, MutableRefObject } from 'react'
+import { useRef } from 'react'
 
-interface IInputProperties
+export interface IInputProperties
   extends DetailedHTMLProps<
     React.InputHTMLAttributes<HTMLInputElement>,
     HTMLInputElement
   > {
-  setValue(value: string): void
+  setValue?(value: string): void
   title?: string
-  containerClasses?: string
-  inputClasses?: string
+  placeholder?: string
+  containerClassName?: string
+  inputClassName?: string
   register?: any
   name?: string
   errors?: any | undefined
+  leftIcon?: any
 }
 
 export function Input(properties: IInputProperties) {
@@ -23,34 +25,44 @@ export function Input(properties: IInputProperties) {
     value,
     title,
     setValue,
-    containerClasses,
-    inputClasses,
+    containerClassName,
+    inputClassName,
     register,
     name,
+    placeholder,
     errors,
-
+    leftIcon,
     ...nativeInputAttribute
   } = properties
+
+  const reference = useRef(null) as MutableRefObject<HTMLLabelElement | null>
+
   return (
-    <label className={classNames('block relative m-0', containerClasses)}>
-      {title && <span className="mb-1 text-sm">{title}</span>}
+    <label className={classNames('input__container', containerClassName)} ref={reference}>
+      {title && <span className="input__title">{title}</span>}
+      {leftIcon && (
+        <div className="absolute left-2 top-1/2 -translate-y-1/2 w-5">{leftIcon}</div>
+      )}
+
       <input
-        className={classNames('input ', inputClasses)}
-        {...(register && { ...register(name) })}
-        {...nativeInputAttribute}
+        className={classNames(
+          'input',
+          leftIcon && 'input--with-icon',
+          errors && name && errors[name]
+            ? 'border-error'
+            : 'border-textfield-border focus:border-accent',
+          inputClassName
+        )}
+        placeholder={placeholder || 'Enter here'}
         onChange={(e) => {
           if (setValue) {
             setValue(e.target.value)
           }
         }}
+        {...(register && { ...register(name) })}
+        {...nativeInputAttribute}
       />
-      {errors && name && (
-        <ErrorMessage
-          errors={errors}
-          name={name}
-          render={(e) => <span className="text-rose-700 mt-1 relative">{e.message}</span>}
-        />
-      )}
+      {/* <InputError errors={errors} name={name} className="-bottom-[1.2rem]" /> */}
     </label>
   )
 }

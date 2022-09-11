@@ -1,5 +1,5 @@
 export * from './client-card.component'
 export * from './client-status-label.component'
 export * from './clients-list.component'
-export * from './comment-card.component'
-export * from './comments-list.component'
+export * from './event-card.component'
+export * from './events-list.component'

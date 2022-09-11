@@ -1,3 +1,3 @@
-export * as AuthApi from './auth.api'
-export * as AuthModel from './model'
-export * as Auth from './ui'
+export * as AuthApiService from './auth.api'
+export * as AuthModelService from './model'
+export * as AuthUiService from './ui'

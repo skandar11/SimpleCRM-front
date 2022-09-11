@@ -16,7 +16,7 @@ export function useClientStatus(props: IuseClientStatusProperties) {
         return 'Удален'
       }
       case ClientStatusEnum.WaitingPayment:
-        return 'Ждет оплаты'
+        return 'Ожидаем оплату'
       default:
         return ''
     }

@@ -1,6 +1,7 @@
 import { ErrorPage } from '@pages/404/error.page'
-import { ROUTES } from '@shared/constants'
 import { Route, Routes } from 'react-router-dom'
+
+import { ROUTES } from './routes.constant'
 
 export function AppRouter(): JSX.Element {
   return (

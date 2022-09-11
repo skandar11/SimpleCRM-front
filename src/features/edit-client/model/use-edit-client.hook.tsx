@@ -1,7 +1,7 @@
-import { ClientsApi } from '@entities/clients'
-import { TargetsApi } from '@entities/targets'
+import { ClientsApiService } from '@entities/clients'
+import { TargetsApiService } from '@entities/targets'
 import type { ITarget } from '@entities/targets/model'
-import { formatPhone } from '@shared/utils'
+import { formatPhone } from '@shared/lib'
 import type { SubmitHandler } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 
@@ -14,9 +14,9 @@ export interface IuseEditClientProperties {
 
 export function useEditClient({ clientId, target }: IuseEditClientProperties) {
   const navigate = useNavigate()
-  const [editClient] = ClientsApi.useEditClientMutation()
-  const [addTarget] = TargetsApi.useAddTargetMutation()
-  const [editTarget] = TargetsApi.useEditTargetMutation()
+  const [editClient] = ClientsApiService.useEditClientMutation()
+  const [addTarget] = TargetsApiService.useAddTargetMutation()
+  const [editTarget] = TargetsApiService.useEditTargetMutation()
 
   const onAddNewTarget = async (data: IEditClientForm) => {
     try {
